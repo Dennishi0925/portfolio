@@ -1,0 +1,21 @@
+[
+    {
+        "title": "《黑神話：悟空》爆紅，台灣遊戲業拉警報？",
+        "description": "Brief description of report 1.",
+        "image": "images/test.png",
+        "link": "https://www.gvm.com.tw/article/115876"
+    },
+    {
+        "title": "微軟替Copilot加入視力和記憶力，想陪伴人類生活？",
+        "description": "Brief description of report 2.",
+        "image": "images/report2.jpg",
+        "link": "https://imgs.gvm.com.tw/upload/gallery/20240607/172931.jpg"
+    },
+    {
+        "title": "OpenAI開發者大會四大更新：可即時聊新聞，讓食譜「說話」？",
+        "description": "Brief description of report 3.",
+        "image": "https://imgs.gvm.com.tw/upload/gallery/20241002/183328.jpg",
+        "link": "https://www.gvm.com.tw/article/116095"
+    }
+    // 在這裡添加更多報導...
+]

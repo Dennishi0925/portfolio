@@ -98,10 +98,19 @@
                     </div>
                 `).join('');
             })
+            
+            fetch('reports.json')
+            .then(response => response.text())
+            .then(text => {
+              console.log("Raw JSON text:", text);  // 輸出原始文本
+              return JSON.parse(text);
+              })
+              .then(data => {
+                console.log("Parsed data:", data);
+                // 使用解析後的數據
+                })
             .catch(error => {
                 console.error('Error loading reports:', error);
-                const gallery = document.getElementById('gallery');
-                gallery.innerHTML = '<p>Unable to load reports at this time.</p>';
             });
             
             

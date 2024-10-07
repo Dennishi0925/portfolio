@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Journalist Portfolio</title>
+    <style>
+        /* 保持之前的 CSS 樣式 */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Hello world! I am a journalist at [Your Current Workplace]. Previously, I worked at [Previous Workplaces].</p>
+        <p>I report, write, and create data visualizations.</p>
+        <p>You can download my resume <a href="#">here</a>.</p>
+    </header>
+
+    <div id="gallery" class="gallery">
+        <!-- Gallery items will be dynamically inserted here -->
+    </div>
+
+    <div class="social-icons">
+        <a href="#" title="Email">📧</a>
+        <a href="#" title="Twitter">🐦</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="LinkedIn">🔗</a>
+        <a href="#" title="GitHub">🐱</a>
+    </div>
+
+    <script src="js/reports.js"></script>
+    <script>
+        // 等待 DOM 完全加載後再執行腳本
+        document.addEventListener('DOMContentLoaded', function() {
+            function createGalleryItem(report) {
+                return `
+                    <div class="gallery-item">
+                        <img src="${report.image}" alt="${report.title}">
+                        <h3>${report.title}</h3>
+                        <p>${report.description}</p>
+                    </div>
+                `;
+            }
+
+            function renderGallery() {
+                const gallery = document.getElementById('gallery');
+                if (typeof reports !== 'undefined' && Array.isArray(reports)) {
+                    gallery.innerHTML = reports.map(createGalleryItem).join('');
+                } else {
+                    console.error('Reports data is not available or not in the expected format');
+                    gallery.innerHTML = '<p>Unable to load reports at this time.</p>';
+                }
+            }
+
+            // 確保 reports 變量已經定義
+            if (typeof reports !== 'undefined') {
+                renderGallery();
+            } else {
+                console.error('Reports data is not loaded');
+            }
+        });
+    </script>
+</body>
+</html>
